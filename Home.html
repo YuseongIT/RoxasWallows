@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let currentIndex = 0;
+        const intervalTime = 2000;
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slider img');
+            slides.forEach(slide => slide.style.transform = `translateX(-${index * 100}%)`);
+        }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 7;
+            showSlide(currentIndex);
+        }
+        setInterval(nextSlide, intervalTime);
+
+        let pollVotes = {
+    'These Days': 0,
+    '1980s Horror Film': 0,
+    'Pictures of Girls': 0,
+    'Let The Sun In':0,
+    'Ground':0
+};
+
+function submitVote() {
+    const selectedOption = document.querySelector('input[name="pollOption"]:checked');
+
+    if (selectedOption) {
+        const selectedValue = selectedOption.value;
+        pollVotes[selectedValue]++;
+        alert("Thank you for voting!");
+        displayResults();
+    } else {
+        alert("Please select an option before submitting.");
+    }
+}
+
+function displayResults() {
+    const resultElement = document.getElementById('pollResult');
+    resultElement.innerHTML = 'Poll Results:<br>';
+
+    for (const option in pollVotes) {
+        resultElement.innerHTML += `${option}: ${pollVotes[option]} votes<br>`;
+    }
+}
+    </script>
+    <link rel="stylesheet" type="text/css" href="Home.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap">
+ <link rel="icon" type="image/x-icon" href="icon.png">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<title>Ivanify: The Official Wiki For Bands!</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="Spotify.png" alt="Website Icon">
+            <img class="Logo" src="image-removebg-preview.png"
+        </div>
+        <nav>
+         <a href="Home.html">HOME</a>
+            <a href="News.html">NEWS</a>
+            <a href="Discography.html">DISCOGRAPHY</a>
+            <a href="Members.html">MEMBERS</a>
+            <a href="Community.html">COMMUNITY</a>
+
+            <form action="/search" method="get">
+             <input type="text" name="q" placeholder="Search...">
+             <input type="button">
+         </form>
+        </nav>
+    </header>
+
+    <div class="home-page-header">
+<p style="text-align:center; color: rgb(255, 255, 255); font-size:60px; margin: 10px; padding: 10px;">HOME</p>
+    </div>
+
+
+
+
+    <div class="home-page-content">
+        <table class="table1">
+            <tr>
+                <section>
+                <td id="data">
+                    <img src="WallowsLogo.png" class="wallows-image">
+                    <span>Overview</span>
+                </td>
+                <div>
+            <tr>
+                <td class="content1" id="content1">
+                    <p style="font-weight: bolder;font-size: 25px; text-decoration: underline;">Who are the Wallows?</p>
+                    <p>"Wallows" is an American alternative rock band based in Los Angeles composed of
+                        <a href="https://www.instagram.com/dylanminnette/" target="_blank" style="text-decoration: underline;">Dylan Minnette</a>, 
+                        <a href="https://www.instagram.com/braedenlemasters/" target="_blank" style="text-decoration: underline;">Braeden Lemasters</a>, and 
+                        <a href="https://www.instagram.com/colepressston/?hl=en" target="_blank" style="text-decoration: underline;">Cole Preston</a>. 
+                        The band began releasing songs independently in April 2017, starting with "Pleaser", which reached number two on the Spotify Global Viral 50 chart.</p>
+                    <fig style="text-align:center">
+                        <img class="wallows-img" src="Wallows2018.jpg" alt="Wallows in 2018.">
+                        <figcaption style="font-style: italic; margin-top: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Wallows in 2018.</figcaption>
+                    </fig>
+                            
+                    <p>Wallows' musical style has mainly been described as alternative rock, post-punk, power pop, indie rock, bedroom pop, indie pop and surf punk.
+                        Wallows have cited Arctic Monkeys, The Strokes, The Libertines, Arcade Fire, Kanye West, and The Smiths as some of the band's artistic influences.</p>
+                        <hr>
+                        <h2 style="font-family: Arial, Helvetica, sans-serif;text-decoration: underline;">The Alternative Rock Genre</h2>
+                        <p>In addition to their musical prowess, Wallows' commitment to authenticity and storytelling sets them apart. Their lyrics, often introspective and relatable, delve into the human experience, creating a profound connection with listeners. The band's ability to infuse raw emotion into their compositions adds a layer of depth to the Alternative and Indie Rock genres.</p>
+                        <p>Check out their profile here!</p>
+                        <a class="click" href="https://clairopedia.fandom.com/wiki/Wallows" target="_blank">Click me!</a>
+                </td>
+            </tr>
+                </div>
+                </section>
+            </tr>
+        </table>
+        <table class="albums">
+            <tr>
+                <td>
+                    <section class="album-section"  style="width: 500px;">
+                        <h2>Featured Albums</h2>
+                        <div class="slider-wrap">
+                            <div class="slider">
+                                <img id="slider1" src="Wallows-TMTIO.png" alt="Tell Me That It's Over EP by Wallows">
+                                <img id="slider2" src="Wallows-Remote.png" alt="Remote EP by Wallows">
+                                <img id="slider3" src="Wallows-Spring.jpg" alt="Spring EP by Wallows">
+                                <img id="slider4" src="Wallows_nothing_happens.png" alt="Nothing Happens Album by Wallows">
+                                <img id="slider5" src="Wallows-TheNarwhals.jpg" alt="The Narwhals EP by Wallows">
+                            </div>
+                            <div class="slidernav">
+                                <a href="#slider1"></a>
+                                <a href="#slider2"></a>
+                                <a href="#slider3"></a>
+                                <a href="#slider4"></a>
+                                <a href="#slider5"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <hr style=" margin-right: 25px;margin-left: 10px; margin: 20px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <section class="wallows-image-slides">
+                        <div class="carousel-wrap">
+                            <div class="carousel-slider">
+                                <img id="slide1" src="slide1.PNG">
+                                <img id="slide2" src="slide2.jpg">
+                                <img id="slide3" src="slide3.jpg">
+                                <img id="slide4" src="slide4.jpg">
+                                <img id="slide5" src="slide5.jpg">
+                                <img id="slide6" src="slide6.jpg">
+                                <img id="slide7" src="slide7.jpg">
+                            </div>
+                            <div class="carousel-nav">
+                                <a href="#slide1"></a>
+                                <a href="#slide2"></a>
+                                <a href="#slide3"></a>
+                                <a href="#slide4"></a>
+                                <a href="#slide5"></a>
+                                <a href="#slide6"></a>
+                                <a href="#slide7"></a>
+                            </div>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr style="margin: 25px 5px;">
+                    <div class="polls">
+                        <div class="poll-content">
+                            <h1 style="font-family: 'Play', sans-serif;">Quiz! What's your favorite song from the Spring EP?</h1>
+                            <form id="poll-form">
+                                <label for="option1">These Days</label>
+                                <input type="radio" name="pollOption" id="option1" value="These Days">
+                
+                                <label for="option2">1980s Horror Film</label>
+                                <input type="radio" name="pollOption" id="option2" value="1980s Horror Film">
+                
+                                <label for="option3">Pictures of Girls</label>
+                                <input type="radio" name="pollOption" id="option3" value="Pictures of Girls">
+                
+                                <label for="option4">Let The Sun In</label>
+                                <input type="radio" name="pollOption" id="option4" value="Let The Sun In">
+                
+                                <label for="option5">Ground</label>
+                                <input type="radio" name="pollOption" id="option5" value="Ground">
+                                <br>
+                                <button type="button" id="poll-button" onclick="submitVote()">Submit Vote</button>
+                            </form>
+                            <p id="pollResult"></p>
+                        </div>
+                        <img class="SpringEp" src="SpringEp.jfif">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>`
+
+</div>
+
+<footer>
+    <div class="footer">
+    <div class="row">
+    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.youtube.com/" ><i class="fa fa-youtube"></i></a>
+    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+    </div>
+    
+    <div class="row" style=" margin:auto;">
+    <ul style="font-size: large;">
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Contact us</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Our Services</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Privacy Policy</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Terms & Conditions</a></li>
+    </ul>
+    </div>
+    
+    <div class="row" style="font-size: larger;">
+    Ivanify: The Wiki For Bands!
+    </div>
+    </div>
+    </footer>
+  
+
+</body>
+ </html>
